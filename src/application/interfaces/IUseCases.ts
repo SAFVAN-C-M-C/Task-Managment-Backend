@@ -1,4 +1,4 @@
-import { ICreateTaskUseCase, IFindUserByEmailUseCase, ILoginUseCase, IRegisterUseCase } from "@/domain/useCases";
+import { ICreateTaskUseCase, IDeleteTaskUseCase, IFindUserByEmailUseCase, IGetTaskByIdUseCase, IGetTasksUseCase, ILoginUseCase, IRegisterUseCase, IUpdateTaskUseCase } from "@/domain/useCases";
 import { IDependencies } from "./IDependencies";
 
 export interface IUseCases {
@@ -8,4 +8,8 @@ export interface IUseCases {
 
   //task
   createTaskUseCase: (dependencies: IDependencies) => ICreateTaskUseCase;
+  getTasksUseCase: (dependencies: IDependencies) => IGetTasksUseCase;
+  getTaskByIdUseCase: (dependencies: IDependencies) => IGetTaskByIdUseCase;
+  updateTaskUseCase: (dependencies: IDependencies) => IUpdateTaskUseCase;
+  deleteTaskUseCase: (dependencies: IDependencies) => IDeleteTaskUseCase;
 }

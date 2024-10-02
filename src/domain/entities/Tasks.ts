@@ -18,3 +18,30 @@ export interface ICreateTask {
   status: string;
   user: string;
 }
+export interface IUpdateTask{
+  taskId:string;
+  title?: string;
+  description?: string;
+  dueDate?: Date;
+  priority?: string;
+  status?: string;
+  completed?:boolean
+  user: string;
+}
+export interface IUpdateTaskRes{
+task:ITasks,
+prevStatus:string
+}
+export interface IGetTasks{
+  userId:string;
+  page:number;
+  limit:number;
+  filter?:string;
+}
+export interface IGetTasksResponse{
+  completed:number;
+  inProgress:number;
+  pending:number;
+  total:number;
+  tasks:ITasks[]
+}

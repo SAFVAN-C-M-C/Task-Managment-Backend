@@ -1,6 +1,3 @@
-import { comparePassword, hashPassword } from "@/_lib/bcrypt";
-import ErrorResponse from "@/_lib/error/errorResponse";
-import { generateAccessToken } from "@/_lib/jwt";
 import { IDependencies } from "@/application/interfaces/IDependencies";
 import { Request, Response, NextFunction } from "express";
 

@@ -5,11 +5,12 @@ import cookieParser from "cookie-parser";
 import { routes } from "@/infrastructure/routes";
 import { dependencies } from "@/_boot/dependencies";
 import errorHandler from "@/_lib/error/errorHandler";
+import { app ,server} from "@/infrastructure/socket";
 
 dotenv.config();
 
-const app: Application = express();
-const PORT: number = Number(process.env.PORT) || 8080; //either run on 4040 or 8080
+
+const PORT: number = Number(process.env.PORT) || 4040; //either run on 4040 or 8080
 //middleware
 app.use(
   cors({
@@ -32,7 +33,7 @@ app.use("*", (req: Request, res: Response) => {
 app.use(errorHandler);
 
 //listning to the port
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`connected to chat service defaultly at ${PORT}`);
 });
 

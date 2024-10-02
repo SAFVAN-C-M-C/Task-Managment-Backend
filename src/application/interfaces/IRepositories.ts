@@ -1,4 +1,4 @@
-import { ICreateTask, ILogin, ILoginUser, IRegisterUser, ITasks, IUser } from "@/domain/entities";
+import { ICreateTask, IGetTasks, IGetTasksResponse, ILogin, ILoginUser, IRegisterUser, ITasks, IUpdateTask, IUpdateTaskRes, IUser } from "@/domain/entities";
 
 
 export interface IRepositories {
@@ -8,5 +8,8 @@ export interface IRepositories {
 
   //task management
   createTask:(data:ICreateTask) => Promise<ITasks | null>;
-
+  getTasks:(data:IGetTasks) => Promise<IGetTasksResponse | null>;
+  getTaskById:(taskId:string) => Promise<ITasks | null>;
+  updateTask:(data:IUpdateTask)=>Promise<IUpdateTaskRes |string| null>;
+  deleteTask:(taskId:string)=>Promise<any | null>;
 }
