@@ -45,8 +45,9 @@ export const loginController = (dependencies: IDependencies) => {
       res.cookie("access_token", accessToken, {
         httpOnly: true,
         maxAge: 6000 * 60 * 24 * 7,
-        // secure: process.env.NODE_ENV === "production",
-        // sameSite: 'none' // Allow cookies to be sent cross-origin
+        //only enable in production
+        secure: process.env.NODE_ENV === "production",
+        sameSite: 'none' // Allow cookies to be sent cross-origin
       });
       
       res.status(200).json({

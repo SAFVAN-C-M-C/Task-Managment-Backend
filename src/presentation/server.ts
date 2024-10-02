@@ -34,7 +34,7 @@ app.use(errorHandler);
 
 //listning to the port
 server.listen(PORT, () => {
-  console.log(`connected to chat service defaultly at ${PORT}`);
+  console.log(`connected to task manager defaultly at ${PORT}`);
 });
 
 export default app;
