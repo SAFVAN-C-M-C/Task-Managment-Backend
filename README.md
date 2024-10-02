@@ -48,3 +48,6 @@ npm run start
 
 The API will start on `http://localhost:4040`.
 
+## API Documentation
+
+You can find the API documentation [here](https://documenter.getpostman.com/view/30048349/2sAXxLAZ4H).
