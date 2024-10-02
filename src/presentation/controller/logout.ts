@@ -13,8 +13,8 @@ export const logoutController = (dependencies: IDependencies) => {
     try {
       const cookieOptions: CookieOptions = {
         httpOnly: true,
-        // secure: process.env.NODE_ENV === "production",
-        // sameSite: "none",
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "none",
       };
       res.clearCookie("access_token", cookieOptions);
       res.status(204).json({
